@@ -114,16 +114,19 @@ function Button({
   variant?: 'primary' | 'outline' | 'accent' | 'ghost';
 }) {
   const variants = {
-    primary: 'bg-royal-600 text-white hover:bg-royal-700 focus:ring-royal-600',
+    primary:
+      'bg-gradient-to-r from-royal-600 to-royal-800 text-white shadow-lg shadow-royal-600/30 hover:from-royal-700 hover:to-royal-900 hover:-translate-y-0.5 focus:ring-royal-600',
     outline:
-      'border-2 border-royal-600 text-royal-600 hover:bg-royal-50 focus:ring-royal-600',
-    accent: 'bg-accent-600 text-white hover:bg-accent-700 focus:ring-accent-600',
-    ghost: 'text-royal-600 hover:bg-royal-50',
+      'rounded-full border-2 border-white/80 bg-white/10 px-7 text-white backdrop-blur hover:bg-white/20 focus:ring-white',
+    accent:
+      'bg-gradient-to-r from-accent-600 to-accent-700 text-white shadow-lg shadow-accent-600/30 hover:from-accent-700 hover:to-accent-800 hover:-translate-y-0.5 focus:ring-accent-600',
+    ghost:
+      'rounded-full bg-royal-50 text-royal-600 hover:bg-royal-100 hover:-translate-y-0.5',
   };
   return (
     <button
       className={cn(
-        'inline-flex items-center justify-center rounded-lg px-5 py-3 font-medium transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-60',
+        'inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-60 disabled:hover:translate-y-0',
         variants[variant],
         className
       )}
@@ -144,11 +147,13 @@ function SectionHeading({ eyebrow, title, subtitle }: { eyebrow?: string; title:
       className='mb-12 max-w-3xl'
     >
       {eyebrow && (
-        <span className='mb-2 block text-sm font-semibold uppercase tracking-widest text-royal-600'>
+        <span className='mb-3 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-royal-600'>
+          <span className='h-1.5 w-8 rounded-full bg-gradient-to-r from-royal-600 to-gold-500' />
           {eyebrow}
         </span>
       )}
       <h2 className='text-3xl font-bold text-royal-800 sm:text-4xl lg:text-5xl'>{title}</h2>
+      <div className='mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-royal-600 via-gold-500 to-accent-600' />
       {subtitle && <p className='mt-4 text-lg text-slate-600'>{subtitle}</p>}
     </motion.div>
   );
@@ -394,8 +399,8 @@ export default function HomePage() {
     <div className='min-h-screen bg-white' id='home'>
       <nav
         className={cn(
-          'fixed inset-x-0 top-0 z-50 transition-all duration-300',
-          scrolled ? 'bg-white/90 shadow-sm backdrop-blur-md' : 'bg-white/80 backdrop-blur-md'
+          'fixed inset-x-0 top-0 z-50 border-b border-royal-100/30 transition-all duration-300',
+          scrolled ? 'bg-white/95 shadow-md backdrop-blur-xl' : 'bg-white/80 backdrop-blur-md'
         )}
       >
         <div className='mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8'>
@@ -490,11 +495,11 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className='mb-4 inline-block rounded-full border border-white/30 bg-white/10 px-4 py-1 text-sm font-medium backdrop-blur-sm'>
+            <span className='mb-4 inline-block rounded-full border border-gold-400/50 bg-gradient-to-r from-royal-900/60 to-royal-800/40 px-5 py-2 text-sm font-semibold tracking-wider text-gold-300 backdrop-blur-md shadow-lg'>
               Ministry Reg. No: IC/Midlands/335
             </span>
-            <h1 className='font-heading text-4xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl'>
-              Together We Light <span className='text-gold-400'>the Nation</span>
+            <h1 className='font-heading text-4xl font-extrabold tracking-tight drop-shadow-2xl sm:text-6xl lg:text-7xl'>
+              Together We Light <span className='text-gold-300 drop-shadow-lg'>the Nation</span>
             </h1>
             <p className='mx-auto mt-6 max-w-2xl text-lg font-light leading-relaxed sm:text-xl'>
               Forward Ever, Backwards Never. Quality Independent Secondary Education in Kwekwe, Zimbabwe.
@@ -517,7 +522,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className='mx-auto mt-16 grid max-w-4xl gap-4 rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur-md sm:grid-cols-2 lg:grid-cols-4'
+            className='glass-panel mx-auto mt-16 grid max-w-4xl gap-4 rounded-3xl p-5 sm:grid-cols-2 lg:grid-cols-4'
           >
             {[
               ['Established', '2010'],
@@ -525,7 +530,7 @@ export default function HomePage() {
               ['Exam Board', 'ZIMSEC (O-Level)'],
               ['Curriculum', '14 Subjects, Forms 1-4'],
             ].map(([label, value]) => (
-              <div key={label} className='rounded-xl bg-white/10 p-3 text-left'>
+              <div key={label} className='rounded-xl bg-white/10 p-3 text-left transition-colors hover:bg-white/15'>
                 <p className='text-xs font-medium uppercase tracking-wider text-white/80'>{label}</p>
                 <p className='mt-1 font-heading text-lg font-bold text-white'>{value}</p>
               </div>
@@ -542,7 +547,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className='relative overflow-hidden rounded-2xl shadow-2xl'
+              className='premium-card relative overflow-hidden rounded-3xl shadow-2xl'
             >
               <div className='aspect-[4/5] w-full sm:aspect-square'>
                 <Image
@@ -601,9 +606,9 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className='rounded-2xl border border-white/50 bg-white p-8 shadow-lg shadow-royal-900/5'
+              className='premium-card rounded-2xl p-8'
             >
-              <div className='mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-royal-100 text-royal-600'>
+              <div className='mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-royal-600 to-royal-800 text-white shadow-md'>
                 <Target className='h-6 w-6' />
               </div>
               <h3 className='font-heading text-2xl font-bold text-royal-800'>Vision</h3>
@@ -617,9 +622,9 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className='rounded-2xl border border-white/50 bg-white p-8 shadow-lg shadow-royal-900/5'
+              className='premium-card rounded-2xl p-8'
             >
-              <div className='mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-royal-100 text-royal-600'>
+              <div className='mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-royal-600 to-royal-800 text-white shadow-md'>
                 <Globe className='h-6 w-6' />
               </div>
               <h3 className='font-heading text-2xl font-bold text-royal-800'>Mission</h3>
@@ -642,9 +647,9 @@ export default function HomePage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: i * 0.05 }}
-                    className='group rounded-2xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md'
+                    className='premium-card group rounded-2xl p-6'
                   >
-                    <div className='mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-royal-50 text-royal-600 group-hover:bg-royal-600 group-hover:text-white'>
+                    <div className='mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-royal-600 to-royal-800 text-white shadow-md group-hover:from-royal-700 group-hover:to-royal-900'>
                       <Icon className='h-5 w-5' />
                     </div>
                     <p className='font-heading font-semibold text-royal-800'>{v.key}</p>
@@ -732,9 +737,9 @@ export default function HomePage() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.3, delay: i * 0.03 }}
-                    className='flex items-start gap-4 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition-shadow hover:shadow-md'
+                    className='premium-card flex items-start gap-4 rounded-2xl p-6'
                   >
-                    <div className='flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-royal-50 text-royal-600'>
+                    <div className='flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-royal-600 to-royal-800 text-white shadow-md'>
                       <Icon className='h-6 w-6' />
                     </div>
                     <div>
@@ -752,7 +757,7 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className='mt-16 rounded-2xl bg-royal-800 p-8 text-center text-white shadow-2xl sm:p-12'
+            className='mt-16 rounded-3xl bg-gradient-to-br from-royal-700 via-royal-800 to-royal-900 p-8 text-center text-white shadow-2xl sm:p-12'
           >
             <GraduationCap className='mx-auto h-12 w-12 text-gold-400' />
             <h3 className='mt-4 font-heading text-2xl font-bold'>End-of-Form-4 ZIMSEC Ordinary Level Examination</h3>
@@ -799,7 +804,7 @@ export default function HomePage() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.3, delay: i * 0.03 }}
-                  className='group relative cursor-zoom-in overflow-hidden rounded-xl break-inside-avoid shadow-sm'
+                  className='premium-card group relative cursor-zoom-in overflow-hidden rounded-2xl break-inside-avoid'
                   onClick={() => setLightbox(img.src)}
                 >
                   <div className='relative w-full' style={{ paddingBottom: i % 3 === 0 ? '120%' : i % 3 === 1 ? '80%' : '100%' }}>
@@ -811,7 +816,7 @@ export default function HomePage() {
                       sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'
                     />
                   </div>
-                  <div className='absolute inset-0 flex items-end bg-gradient-to-t from-royal-900/80 via-transparent to-transparent p-4 opacity-0 transition-opacity group-hover:opacity-100'>
+                  <div className='absolute inset-0 flex items-end bg-gradient-to-t from-royal-900/90 via-royal-900/20 to-transparent p-4 opacity-0 transition-opacity group-hover:opacity-100'>
                     <span className='rounded-full bg-white/20 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm'>
                       {img.alt}
                     </span>
@@ -868,7 +873,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className='rounded-2xl border border-slate-200 bg-white p-6 shadow-lg sm:p-8'
+              className='premium-card rounded-2xl p-6 sm:p-8'
             >
               <h3 className='mb-6 font-heading text-2xl font-bold text-royal-800'>Online Application Form</h3>
               <ApplyForm />
@@ -893,7 +898,7 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               className='space-y-4'
             >
-              <div className='flex items-start gap-4 rounded-2xl bg-white p-5 shadow-sm'>
+              <div className='premium-card flex items-start gap-4 rounded-2xl p-5'>
                 <MapPin className='mt-1 h-6 w-6 shrink-0 text-royal-600' />
                 <div>
                   <h4 className='font-heading font-semibold text-royal-800'>Physical Address</h4>
@@ -917,7 +922,7 @@ export default function HomePage() {
                 href='https://wa.me/263773466514?text=Hello%20W%20Booms%20College%2C%20I%20would%20like%20to%20inquire%20about%20admissions.'
                 target='_blank'
                 rel='noreferrer'
-                className='flex items-start gap-4 rounded-2xl bg-green-50 p-5 shadow-sm transition-colors hover:bg-green-100'
+                className='flex items-start gap-4 rounded-2xl bg-green-50 p-5 shadow-sm transition-all hover:-translate-y-1 hover:bg-green-100'
               >
                 <MessageCircle className='mt-1 h-6 w-6 shrink-0 text-green-700' />
                 <div>
@@ -956,7 +961,7 @@ export default function HomePage() {
                   loading='lazy'
                 />
               </div>
-              <div className='rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8'>
+              <div className='premium-card rounded-2xl p-6 sm:p-8'>
                 <h3 className='mb-4 font-heading text-xl font-bold text-royal-800'>Send us a message</h3>
                 <ContactForm />
               </div>
@@ -965,7 +970,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <footer className='bg-royal-900 py-12 text-white'>
+      <footer className='bg-gradient-to-b from-royal-900 to-royal-950 border-t border-gold-500/30 py-12 text-white'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
           <div className='grid gap-8 md:grid-cols-3'>
             <div>
@@ -1014,7 +1019,7 @@ export default function HomePage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className='fixed inset-0 z-[70] flex items-center justify-center bg-royal-900/60 p-4 backdrop-blur-sm'
+            className='fixed inset-0 z-[70] flex items-center justify-center bg-royal-900/70 p-4 backdrop-blur-sm'
             onClick={() => setApplyOpen(false)}
           >
             <motion.div
@@ -1022,7 +1027,7 @@ export default function HomePage() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className='max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl sm:p-8'
+              className='max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl bg-white p-6 shadow-2xl border border-royal-100/30 sm:p-8'
             >
               <div className='mb-6 flex items-center justify-between'>
                 <h3 className='font-heading text-2xl font-bold text-royal-800'>Online Application</h3>
