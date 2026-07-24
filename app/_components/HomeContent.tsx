@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, Award, Calendar, Hash, ArrowRight } from 'lucide-react';
+import { ChevronRight, Award, Calendar, BookOpen, ArrowRight } from 'lucide-react';
 import { heroImages, administrationImages } from '../data/gallery';
 import { Button } from './ui/Button';
 import { SectionHeading } from './SectionHeading';
@@ -12,7 +12,7 @@ import { SectionHeading } from './SectionHeading';
 const highlights = [
   { icon: Calendar, label: 'Established', value: '2010' },
   { icon: Award, label: 'Examination Board', value: 'ZIMSEC O-Level' },
-  { icon: Hash, label: 'Ministry Reg. No.', value: 'IC/Midlands/335' },
+  { icon: BookOpen, label: 'Subjects Offered', value: '14 ZIMSEC Subjects' },
 ];
 
 const filteredHero = heroImages.filter((_, i) => i % 4 === 0).slice(0, 4);
@@ -59,7 +59,7 @@ export function HomeContent() {
           >
             <span className='mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold-400 backdrop-blur-md'>
               <span className='h-2 w-2 rounded-full bg-gold-500' />
-              Ministry Reg. No: IC/Midlands/335
+              Quality independent education in Kwekwe, Zimbabwe
             </span>
             <h1 className='font-heading text-5xl font-black leading-[1.05] tracking-tight text-shadow-xl sm:text-6xl lg:text-7xl'>
               Together We <span className='text-gold-400'>Light</span> the Nation
@@ -109,9 +109,9 @@ export function HomeContent() {
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
           <SectionHeading
             centered
-            eyebrow='Headmaster'
-            title="A Word From the Headmaster"
-            subtitle='A warm welcome to W Booms College, where excellence, discipline, and character are cultivated every day.'
+            eyebrow='Our Message'
+            title='A Word From W Booms College'
+            subtitle='A warm welcome from W Booms College, where excellence, discipline, and character are cultivated every day.'
           />
           <div className='mt-12 grid items-center gap-10 lg:grid-cols-2'>
             <motion.div
@@ -122,7 +122,7 @@ export function HomeContent() {
             >
               <Image
                 src={administrationImages[0] || filteredHero[0]}
-                alt='W Booms College Headmaster'
+                alt='W Booms College leadership and student life'
                 fill
                 className='object-cover'
                 sizes='(max-width: 1024px) 100vw, 50vw'
@@ -145,7 +145,7 @@ export function HomeContent() {
                 Through our qualified staff, modern teaching methods, and a strong value system, we continue to
                 light the path for every learner who walks through our gates.
               </p>
-              <p className='mt-6 font-heading text-lg font-semibold text-royal-700'>— Mr. Makore Tendai, Headmaster</p>
+              <p className='mt-6 font-heading text-lg font-semibold text-royal-700'>— W Booms College</p>
             </motion.div>
           </div>
         </div>
@@ -154,6 +154,7 @@ export function HomeContent() {
       <section className='bg-softslate py-20 sm:py-24'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
           <div className='relative overflow-hidden rounded-3xl bg-royal-700 px-6 py-14 text-center text-white shadow-xl sm:px-12 lg:py-20'>
+            <div className='absolute inset-0 opacity-25' style={{ backgroundImage: 'radial-gradient(circle at 20% 30%, #EAB308 0%, transparent 30%), radial-gradient(circle at 80% 70%, #0D47A1 0%, transparent 30%)' }} />
             <div className='absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/5' />
             <div className='absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-white/5' />
             <div className='relative z-10'>
