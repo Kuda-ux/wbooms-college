@@ -1,15 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
+  --background: #FAFBFD;
+  --foreground: #0F172A;
+  --offwhite: #FAFBFD;
+  --softslate: #F1F5F9;
+  --charcoal: #0F172A;
+  --slate-500: #64748B;
+  --slate-600: #475569;
   --royal-50: #E3F2FD;
   --royal-100: #BBDEFB;
   --royal-600: #0D47A1;
   --royal-700: #1A365D;
   --royal-800: #0f2a4d;
-  --royal-900: #0a1e38;
-  --royal-950: #061226;
   --accent-600: #DC2626;
   --accent-700: #B91C1C;
   --gold-400: #FACC15;
@@ -20,6 +23,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-offwhite: var(--offwhite);
+  --color-softslate: var(--softslate);
+  --color-charcoal: var(--charcoal);
   --font-sans: var(--font-body);
   --font-heading: var(--font-heading);
   --color-royal-50: var(--royal-50);
@@ -27,8 +33,6 @@
   --color-royal-600: var(--royal-600);
   --color-royal-700: var(--royal-700);
   --color-royal-800: var(--royal-800);
-  --color-royal-900: var(--royal-900);
-  --color-royal-950: var(--royal-950);
   --color-accent-600: var(--accent-600);
   --color-accent-700: var(--accent-700);
   --color-gold-400: var(--gold-400);
@@ -40,6 +44,11 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--royal-600);
+  color: white;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -61,16 +70,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .premium-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(13, 71, 161, 0.08);
-  box-shadow: 0 10px 40px -12px rgba(13, 71, 161, 0.12);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 10px 40px -12px rgba(15, 23, 42, 0.08);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .premium-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 24px 60px -16px rgba(13, 71, 161, 0.2);
+  box-shadow: 0 24px 60px -16px rgba(15, 23, 42, 0.12);
 }
 
 .glass-panel {
