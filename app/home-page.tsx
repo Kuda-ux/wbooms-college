@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { clsx, type ClassValue } from 'clsx';
@@ -40,7 +40,6 @@ import {
 } from 'lucide-react';
 import {
   allImages,
-  heroImages,
   administrationImages,
   scienceImages,
   formalImages,
@@ -360,6 +359,8 @@ export default function HomePage() {
   const [activeGallery, setActiveGallery] = useState<GalleryCategory>('all');
   const [openCharter, setOpenCharter] = useState<number | null>(null);
 
+  const heroImages = useMemo(() => [...formalImages, ...administrationImages, ...sportsImages], []);
+
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 800], [0, 200]);
   const heroOpacity = useTransform(scrollY, [0, 600], [1, 0.3]);
@@ -399,8 +400,10 @@ export default function HomePage() {
     <div className='min-h-screen bg-white' id='home'>
       <nav
         className={cn(
-          'fixed inset-x-0 top-0 z-50 border-b border-royal-100/30 transition-all duration-300',
-          scrolled ? 'bg-white/95 shadow-md backdrop-blur-xl' : 'bg-white/80 backdrop-blur-md'
+          'fixed inset-x-0 top-0 z-50 border-b transition-all duration-300',
+          scrolled
+            ? 'border-royal-100/30 bg-white/95 shadow-md backdrop-blur-xl'
+            : 'border-transparent bg-transparent'
         )}
       >
         <div className='mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8'>
@@ -408,24 +411,29 @@ export default function HomePage() {
             <div className='relative h-12 w-12 overflow-hidden rounded-full border-2 border-gold-500 bg-white'>
               <Image src='/logo.jpeg' alt='W Booms College logo' fill className='object-contain p-1' sizes='48px' />
             </div>
-            <span className='font-heading text-lg font-bold text-royal-800 sm:text-xl'>W BOOMS COLLEGE</span>
+            <span className={cn('font-heading text-lg font-bold sm:text-xl transition-colors', scrolled ? 'text-royal-800' : 'text-white')}>
+              W BOOMS COLLEGE
+            </span>
           </a>
           <div className='hidden items-center gap-8 lg:flex'>
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollTo(link.id)}
-                className='text-sm font-medium text-slate-700 transition-colors hover:text-royal-600'
+                className={cn(
+                  'text-sm font-medium transition-colors',
+                  scrolled ? 'text-slate-700 hover:text-royal-600' : 'text-white/90 hover:text-white'
+                )}
               >
                 {link.label}
               </button>
             ))}
-            <Button variant='accent' onClick={() => setApplyOpen(true)} className='px-6 py-2 text-sm'>
+            <Button variant={scrolled ? 'accent' : 'outline'} onClick={() => setApplyOpen(true)} className='px-6 py-2 text-sm'>
               Apply Online
             </Button>
           </div>
           <button
-            className='inline-flex items-center justify-center rounded-lg p-2 text-slate-700 lg:hidden'
+            className={cn('inline-flex items-center justify-center rounded-lg p-2 lg:hidden', scrolled ? 'text-slate-700' : 'text-white')}
             onClick={() => setMobileOpen(true)}
             aria-label='Open menu'
           >
@@ -483,28 +491,30 @@ export default function HomePage() {
                 className='object-cover'
                 priority={heroIndex === 0}
                 sizes='100vw'
+                style={{ filter: 'brightness(0.75) contrast(1.05)' }}
               />
-              <div className='absolute inset-0 bg-gradient-to-b from-royal-900/80 via-royal-900/50 to-royal-900/30' />
+              <div className='absolute inset-0 bg-gradient-to-br from-royal-950/95 via-royal-900/90 to-royal-800/70' />
             </motion.div>
           </AnimatePresence>
         </motion.div>
 
-        <div className='relative z-10 mx-auto max-w-7xl px-4 pb-24 pt-32 text-center text-white sm:px-6 lg:px-8'>
+        <div className='relative z-10 mx-auto max-w-7xl px-4 pb-24 pt-36 text-left text-white sm:px-6 lg:px-8'>
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className='max-w-3xl'
           >
-            <span className='mb-4 inline-block rounded-full border border-gold-400/50 bg-gradient-to-r from-royal-900/60 to-royal-800/40 px-5 py-2 text-sm font-semibold tracking-wider text-gold-300 backdrop-blur-md shadow-lg'>
+            <span className='mb-4 inline-block rounded-full border border-gold-400/50 bg-gradient-to-r from-royal-900/60 to-royal-800/40 px-5 py-2 text-sm font-semibold tracking-wider text-gold-300 text-shadow backdrop-blur-md shadow-lg'>
               Ministry Reg. No: IC/Midlands/335
             </span>
-            <h1 className='font-heading text-4xl font-extrabold tracking-tight drop-shadow-2xl sm:text-6xl lg:text-7xl'>
-              Together We Light <span className='text-gold-300 drop-shadow-lg'>the Nation</span>
+            <h1 className='font-heading text-5xl font-black leading-[1.05] tracking-tight text-shadow-xl drop-shadow-2xl sm:text-6xl lg:text-7xl'>
+              Together We Light <span className='text-gold-300 text-shadow-lg'>the Nation</span>
             </h1>
-            <p className='mx-auto mt-6 max-w-2xl text-lg font-light leading-relaxed sm:text-xl'>
+            <p className='mt-6 max-w-2xl text-lg font-light leading-relaxed text-white/95 text-shadow sm:text-xl'>
               Forward Ever, Backwards Never. Quality Independent Secondary Education in Kwekwe, Zimbabwe.
             </p>
-            <div className='mt-8 flex flex-col justify-center gap-4 sm:flex-row'>
+            <div className='mt-8 flex flex-col justify-start gap-4 sm:flex-row'>
               <Button onClick={() => scrollTo('academics')} className='gap-2'>
                 Explore Academics <ChevronRight className='h-4 w-4' />
               </Button>
@@ -530,7 +540,7 @@ export default function HomePage() {
               ['Exam Board', 'ZIMSEC (O-Level)'],
               ['Curriculum', '14 Subjects, Forms 1-4'],
             ].map(([label, value]) => (
-              <div key={label} className='rounded-xl bg-white/10 p-3 text-left transition-colors hover:bg-white/15'>
+              <div key={label} className='rounded-xl bg-white/10 p-3 text-left text-shadow transition-colors hover:bg-white/15'>
                 <p className='text-xs font-medium uppercase tracking-wider text-white/80'>{label}</p>
                 <p className='mt-1 font-heading text-lg font-bold text-white'>{value}</p>
               </div>
