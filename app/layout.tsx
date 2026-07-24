@@ -16,9 +16,64 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "W Booms College | Kwekwe, Zimbabwe",
+  metadataBase: new URL("https://wboomscollege.co.zw"),
+  title: {
+    default: "W Booms College | Kwekwe, Zimbabwe",
+    template: "%s | W Booms College",
+  },
   description:
-    "Forward Ever, Backwards Never. Quality independent secondary education in Kwekwe, Zimbabwe. Together We Light the Nation.",
+    "W Booms College — quality independent secondary education in Kwekwe, Zimbabwe. ZIMSEC Ordinary Level, Form 1 to Form 4. Forward Ever, Backwards Never.",
+  keywords: [
+    "W Booms College",
+    "Kwekwe school",
+    "Zimbabwe secondary school",
+    "ZIMSEC O-Level",
+    "independent school Kwekwe",
+    "Form 1 to Form 4",
+    "W Booms",
+  ],
+  authors: [{ name: "W Booms College" }],
+  creator: "W Booms College",
+  publisher: "W Booms College",
+  applicationName: "W Booms College",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
+  alternates: { canonical: "/" },
+  icons: {
+    icon: "/logo.jpeg",
+    shortcut: "/logo.jpeg",
+    apple: "/logo.jpeg",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_ZW",
+    url: "/",
+    siteName: "W Booms College",
+    title: {
+      default: "W Booms College | Kwekwe, Zimbabwe",
+      template: "%s | W Booms College",
+    },
+    description:
+      "W Booms College — quality independent secondary education in Kwekwe, Zimbabwe. ZIMSEC Ordinary Level, Form 1 to Form 4. Forward Ever, Backwards Never.",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "W Booms College logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "W Booms College | Kwekwe, Zimbabwe",
+    description:
+      "W Booms College — quality independent secondary education in Kwekwe, Zimbabwe. ZIMSEC Ordinary Level, Form 1 to Form 4. Forward Ever, Backwards Never.",
+    images: ["/opengraph-image.png"],
+  },
 };
 
 export default function RootLayout({
