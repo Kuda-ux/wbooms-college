@@ -8,6 +8,8 @@
   --royal-600: #0D47A1;
   --royal-700: #1A365D;
   --royal-800: #0f2a4d;
+  --royal-900: #0a1e38;
+  --royal-950: #061226;
   --accent-600: #DC2626;
   --accent-700: #B91C1C;
   --gold-400: #FACC15;
@@ -25,6 +27,8 @@
   --color-royal-600: var(--royal-600);
   --color-royal-700: var(--royal-700);
   --color-royal-800: var(--royal-800);
+  --color-royal-900: var(--royal-900);
+  --color-royal-950: var(--royal-950);
   --color-accent-600: var(--accent-600);
   --color-accent-700: var(--accent-700);
   --color-gold-400: var(--gold-400);
