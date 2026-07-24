@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calculator, FlaskConical, Microscope, Beaker, BookOpen, Globe2, History, MapPin, Landmark, UserCircle, Briefcase, GraduationCap } from 'lucide-react';
 import { SectionHeading } from './SectionHeading';
+import { PageHero } from './PageHero';
+import { cn } from '../_lib/utils';
 
 const subjects = [
   { name: 'Mathematics', category: 'Sciences & Technology', icon: Calculator },
@@ -30,27 +32,28 @@ export function AcademicsClient() {
 
   return (
     <>
-      <section className='bg-royal-700 py-24 text-white sm:py-32'>
-        <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-          <h1 className='font-heading text-4xl font-black sm:text-5xl lg:text-6xl'>Academics</h1>
-          <p className='mt-6 max-w-2xl text-lg text-royal-100'>
-            A comprehensive ZIMSEC Ordinary Level curriculum delivered across two streams from Form 1 to Form 4.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow='Academics'
+        title='Academic Excellence'
+        highlight='Excellence'
+        subtitle='A comprehensive ZIMSEC Ordinary Level curriculum delivered across two streams from Form 1 to Form 4.'
+      />
 
       <section className='py-20 sm:py-24'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
           <SectionHeading centered eyebrow='Curriculum' title='14 ZIMSEC Subjects' subtitle='Learners are exposed to sciences, humanities, languages, and commercials to build a well-rounded academic foundation.' />
 
-          <div className='mt-10 flex flex-wrap justify-center gap-2'>
+          <div className='mt-10 flex flex-wrap justify-center gap-3'>
             {filters.map((f) => (
               <button
                 key={f}
                 onClick={() => setFilter(f)}
-                className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
-                  filter === f ? 'bg-royal-600 text-white' : 'bg-white text-slate-600 hover:bg-softslate border border-slate-200'
-                }`}
+                className={cn(
+                  'rounded-full px-6 py-2.5 text-sm font-semibold transition-all',
+                  filter === f
+                    ? 'bg-royal-600 text-white shadow-lg shadow-royal-600/20'
+                    : 'border border-slate-200 bg-white text-slate-600 hover:border-royal-200 hover:bg-royal-50'
+                )}
               >
                 {f}
               </button>

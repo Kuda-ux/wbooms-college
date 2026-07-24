@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
 import { SectionHeading } from './SectionHeading';
+import { PageHero } from './PageHero';
 import { ContactForm } from './ContactForm';
 
 const contacts = [
@@ -16,14 +17,12 @@ const contacts = [
 export function ContactClient() {
   return (
     <>
-      <section className='bg-royal-700 py-24 text-white sm:py-32'>
-        <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-          <h1 className='font-heading text-4xl font-black sm:text-5xl lg:text-6xl'>Contact Us</h1>
-          <p className='mt-6 max-w-2xl text-lg text-royal-100'>
-            Reach out for admissions, enquiries, or a school visit. We are here to help.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow='Get in Touch'
+        title='Contact Us'
+        highlight='Us'
+        subtitle='Reach out for admissions, enquiries, or a school visit. Our team is ready to help.'
+      />
 
       <section className='py-20 sm:py-24'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>

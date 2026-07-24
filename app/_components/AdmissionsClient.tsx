@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Check, FileText, Baby, MapPinned, Landmark, Wallet, Smartphone, CreditCard, Banknote } from 'lucide-react';
 import { SectionHeading } from './SectionHeading';
+import { PageHero } from './PageHero';
 import { ApplyForm } from './ApplyForm';
 
 const requirements = [
@@ -31,14 +32,13 @@ const payments = [
 export function AdmissionsClient() {
   return (
     <>
-      <section className='bg-royal-700 py-24 text-white sm:py-32'>
-        <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-          <h1 className='font-heading text-4xl font-black sm:text-5xl lg:text-6xl'>Admissions & Fees</h1>
-          <p className='mt-6 max-w-2xl text-lg text-royal-100'>
-            Transparent costs, simple entry requirements, and a secure online enrolment process for 2026.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow='Admissions'
+        title='Admissions & Fees'
+        highlight='& Fees'
+        subtitle='Transparent costs, simple entry requirements, and a secure online enrolment process for 2026.'
+        align='center'
+      />
 
       <section className='py-20 sm:py-24'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>

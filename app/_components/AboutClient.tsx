@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Target, Shield, Heart, Users, CheckCircle, Award, Star, Handshake } from 'lucide-react';
 import { SectionHeading } from './SectionHeading';
+import { PageHero } from './PageHero';
 import { formalImages, administrationImages } from '../data/gallery';
 
 const values = [
@@ -31,18 +32,12 @@ export function AboutClient() {
 
   return (
     <>
-      <section className='relative overflow-hidden bg-royal-700 py-24 text-white sm:py-32'>
-        <div className='absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/5' />
-        <div className='absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-white/5' />
-        <div className='relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-          <div className='max-w-3xl'>
-            <h1 className='font-heading text-4xl font-black sm:text-5xl lg:text-6xl'>About W Booms College</h1>
-            <p className='mt-6 text-lg text-royal-100'>
-              A Ministry-registered independent secondary school lighting the way for learners in Kwekwe and beyond.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow='About Us'
+        title='About W Booms College'
+        highlight='W Booms College'
+        subtitle='A Ministry-registered independent secondary school lighting the way for learners in Kwekwe and beyond.'
+      />
 
       <section className='py-20 sm:py-24'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
