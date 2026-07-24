@@ -398,22 +398,30 @@ export default function HomePage() {
 
   return (
     <div className='min-h-screen bg-white' id='home'>
-      <nav
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
         className={cn(
           'fixed inset-x-0 top-0 z-50 border-b transition-all duration-300',
           scrolled
-            ? 'border-royal-100/30 bg-white/95 shadow-md backdrop-blur-xl'
-            : 'border-transparent bg-transparent'
+            ? 'border-royal-100/20 bg-white/95 py-2.5 shadow-lg shadow-royal-900/5 backdrop-blur-2xl'
+            : 'border-white/10 bg-transparent py-4'
         )}
       >
-        <div className='mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8'>
-          <a href='#home' onClick={() => scrollTo('home')} className='flex items-center gap-3'>
-            <div className='relative h-12 w-12 overflow-hidden rounded-full border-2 border-gold-500 bg-white'>
+        <div className='mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8'>
+          <a href='#home' onClick={() => scrollTo('home')} className='group flex items-center gap-3'>
+            <div className='relative h-12 w-12 overflow-hidden rounded-full border-2 border-gold-500 bg-white shadow-md transition-transform group-hover:scale-105'>
               <Image src='/logo.jpeg' alt='W Booms College logo' fill className='object-contain p-1' sizes='48px' />
             </div>
-            <span className={cn('font-heading text-lg font-bold sm:text-xl transition-colors', scrolled ? 'text-royal-800' : 'text-white')}>
-              W BOOMS COLLEGE
-            </span>
+            <div className='flex flex-col'>
+              <span className={cn('font-heading text-lg font-bold leading-none tracking-wide transition-colors sm:text-xl', scrolled ? 'text-royal-800' : 'text-white')}>
+                W BOOMS COLLEGE
+              </span>
+              <span className={cn('mt-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] transition-colors', scrolled ? 'text-slate-500' : 'text-white/70')}>
+                Kwekwe, Zimbabwe
+              </span>
+            </div>
           </a>
           <div className='hidden items-center gap-8 lg:flex'>
             {navLinks.map((link) => (
@@ -421,26 +429,30 @@ export default function HomePage() {
                 key={link.id}
                 onClick={() => scrollTo(link.id)}
                 className={cn(
-                  'text-sm font-medium transition-colors',
-                  scrolled ? 'text-slate-700 hover:text-royal-600' : 'text-white/90 hover:text-white'
+                  'relative py-2 text-xs font-bold uppercase tracking-[0.15em] transition-colors',
+                  scrolled ? 'text-slate-700 hover:text-royal-600' : 'text-white/90 hover:text-white',
+                  'after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-gold-500 after:transition-all after:duration-300 hover:after:w-full'
                 )}
               >
                 {link.label}
               </button>
             ))}
-            <Button variant={scrolled ? 'accent' : 'outline'} onClick={() => setApplyOpen(true)} className='px-6 py-2 text-sm'>
-              Apply Online
+            <Button variant={scrolled ? 'primary' : 'outline'} onClick={() => setApplyOpen(true)} className='px-6 py-2 text-sm'>
+              Apply Now <ChevronRight className='ml-1 h-4 w-4' />
             </Button>
           </div>
           <button
-            className={cn('inline-flex items-center justify-center rounded-lg p-2 lg:hidden', scrolled ? 'text-slate-700' : 'text-white')}
+            className={cn(
+              'inline-flex items-center justify-center rounded-lg p-2 transition-colors lg:hidden',
+              scrolled ? 'text-slate-700 hover:bg-royal-50' : 'text-white hover:bg-white/10'
+            )}
             onClick={() => setMobileOpen(true)}
             aria-label='Open menu'
           >
             <Menu className='h-6 w-6' />
           </button>
         </div>
-      </nav>
+      </motion.nav>
 
       <AnimatePresence>
         {mobileOpen && (
@@ -448,26 +460,40 @@ export default function HomePage() {
             initial={{ opacity: 0, x: '100%' }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
-            className='fixed inset-0 z-[60] bg-white p-6 lg:hidden'
+            transition={{ duration: 0.35, ease: 'easeOut' }}
+            className='fixed inset-0 z-[60] bg-royal-950 p-6 lg:hidden'
           >
-            <div className='flex justify-end'>
-              <button onClick={() => setMobileOpen(false)} aria-label='Close menu'>
-                <X className='h-6 w-6 text-slate-700' />
+            <div className='flex items-center justify-between'>
+              <span className='font-heading text-xl font-bold tracking-wide text-white'>W BOOMS</span>
+              <button
+                onClick={() => setMobileOpen(false)}
+                aria-label='Close menu'
+                className='rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20'
+              >
+                <X className='h-6 w-6' />
               </button>
             </div>
-            <div className='mt-8 flex flex-col gap-4'>
+            <div className='mt-12 flex flex-col gap-6'>
               {navLinks.map((link) => (
                 <button
                   key={link.id}
                   onClick={() => scrollTo(link.id)}
-                  className='text-left text-xl font-medium text-slate-800 hover:text-royal-600'
+                  className='group flex items-center justify-between text-left text-2xl font-bold text-white transition-colors hover:text-gold-400'
                 >
                   {link.label}
+                  <ChevronRight className='h-5 w-5 text-white/40 transition-transform group-hover:translate-x-1 group-hover:text-gold-400' />
                 </button>
               ))}
-              <Button variant='accent' onClick={() => setApplyOpen(true)} className='mt-4'>
-                Apply Online
+              <Button
+                variant='outline'
+                onClick={() => setApplyOpen(true)}
+                className='mt-6 w-full border-white/30 bg-white/10 py-3 text-white hover:bg-white/20 hover:text-white'
+              >
+                Apply Now
               </Button>
+            </div>
+            <div className='absolute bottom-8 left-6 right-6'>
+              <p className='text-sm text-white/50'>© {new Date().getFullYear()} W Booms College</p>
             </div>
           </motion.div>
         )}
