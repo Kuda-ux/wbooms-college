@@ -36,7 +36,7 @@ export function AdmissionsClient() {
         eyebrow='Admissions'
         title='Admissions & Fees'
         highlight='& Fees'
-        subtitle='Transparent costs, simple entry requirements, and a secure online enrolment process for 2026.'
+        subtitle='Transparent costs, simple entry requirements, and a secure online enrolment process for 2027.'
         align='center'
       />
 
@@ -66,7 +66,7 @@ export function AdmissionsClient() {
 
       <section className='bg-softslate py-20 sm:py-24'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-          <SectionHeading centered eyebrow='2026 Fees' title='Cost Breakdown' subtitle='All amounts are quoted in USD. Optional items can be purchased separately.' />
+          <SectionHeading centered eyebrow='2027 Fees' title='Cost Breakdown' subtitle='All amounts are quoted in USD. Optional items can be purchased separately.' />
           <div className='mt-12 overflow-hidden rounded-3xl bg-white shadow-sm'>
             <table className='w-full text-left text-sm'>
               <thead className='bg-royal-700 text-white'>
@@ -116,7 +116,7 @@ export function AdmissionsClient() {
 
       <section className='bg-softslate py-20 sm:py-24'>
         <div className='mx-auto max-w-4xl px-4 sm:px-6 lg:px-8'>
-          <SectionHeading centered eyebrow='Apply Online' title='2026 Enrolment Form' subtitle='Complete the form below. Our admissions team will contact you within two working days.' />
+          <SectionHeading centered eyebrow='Apply Online' title='2027 Enrolment Form' subtitle='Complete the form below. Our admissions team will contact you within two working days.' />
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
