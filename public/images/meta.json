@@ -1,0 +1,478 @@
+[
+  {
+    "id": 1,
+    "file": "photo-001.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.23 (1).jpeg",
+    "src": "/images/photo-001.jpeg",
+    "rgb": {
+      "r": 183,
+      "g": 185,
+      "b": 182
+    },
+    "hsl": {
+      "h": 100,
+      "s": 0.020979020979020907,
+      "l": 0.7196078431372549
+    },
+    "brightness": 184.06
+  },
+  {
+    "id": 2,
+    "file": "photo-002.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.23 (2).jpeg",
+    "src": "/images/photo-002.jpeg",
+    "rgb": {
+      "r": 177,
+      "g": 178,
+      "b": 174
+    },
+    "hsl": {
+      "h": 75,
+      "s": 0.02531645569620244,
+      "l": 0.6901960784313725
+    },
+    "brightness": 177.245
+  },
+  {
+    "id": 3,
+    "file": "photo-003.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.23 (3).jpeg",
+    "src": "/images/photo-003.jpeg",
+    "rgb": {
+      "r": 130,
+      "g": 146,
+      "b": 147
+    },
+    "hsl": {
+      "h": 183.52941176470586,
+      "s": 0.07296137339055792,
+      "l": 0.5431372549019607
+    },
+    "brightness": 141.33
+  },
+  {
+    "id": 4,
+    "file": "photo-004.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.23.jpeg",
+    "src": "/images/photo-004.jpeg",
+    "rgb": {
+      "r": 188,
+      "g": 189,
+      "b": 186
+    },
+    "hsl": {
+      "h": 79.9999999999998,
+      "s": 0.02222222222222235,
+      "l": 0.7352941176470589
+    },
+    "brightness": 188.359
+  },
+  {
+    "id": 5,
+    "file": "photo-005.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.24.jpeg",
+    "src": "/images/photo-005.jpeg",
+    "rgb": {
+      "r": 170,
+      "g": 176,
+      "b": 178
+    },
+    "hsl": {
+      "h": 194.99999999999994,
+      "s": 0.049382716049382706,
+      "l": 0.6823529411764706
+    },
+    "brightness": 174.434
+  },
+  {
+    "id": 6,
+    "file": "photo-006.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.28 (1).jpeg",
+    "src": "/images/photo-006.jpeg",
+    "rgb": {
+      "r": 117,
+      "g": 113,
+      "b": 135
+    },
+    "hsl": {
+      "h": 250.90909090909088,
+      "s": 0.08870967741935487,
+      "l": 0.48627450980392156
+    },
+    "brightness": 116.704
+  },
+  {
+    "id": 7,
+    "file": "photo-007.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.28 (2).jpeg",
+    "src": "/images/photo-007.jpeg",
+    "rgb": {
+      "r": 119,
+      "g": 118,
+      "b": 133
+    },
+    "hsl": {
+      "h": 243.99999999999997,
+      "s": 0.059760956175298814,
+      "l": 0.49215686274509807
+    },
+    "brightness": 120.009
+  },
+  {
+    "id": 8,
+    "file": "photo-008.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.28.jpeg",
+    "src": "/images/photo-008.jpeg",
+    "rgb": {
+      "r": 107,
+      "g": 104,
+      "b": 133
+    },
+    "hsl": {
+      "h": 246.20689655172418,
+      "s": 0.12236286919831228,
+      "l": 0.4647058823529412
+    },
+    "brightness": 108.203
+  },
+  {
+    "id": 9,
+    "file": "photo-009.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.29.jpeg",
+    "src": "/images/photo-009.jpeg",
+    "rgb": {
+      "r": 104,
+      "g": 105,
+      "b": 133
+    },
+    "hsl": {
+      "h": 237.93103448275863,
+      "s": 0.12236286919831228,
+      "l": 0.4647058823529412
+    },
+    "brightness": 107.893
+  },
+  {
+    "id": 10,
+    "file": "photo-010.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.31 (1).jpeg",
+    "src": "/images/photo-010.jpeg",
+    "rgb": {
+      "r": 96,
+      "g": 105,
+      "b": 139
+    },
+    "hsl": {
+      "h": 227.4418604651163,
+      "s": 0.18297872340425528,
+      "l": 0.46078431372549017
+    },
+    "brightness": 106.185
+  },
+  {
+    "id": 11,
+    "file": "photo-011.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.31.jpeg",
+    "src": "/images/photo-011.jpeg",
+    "rgb": {
+      "r": 103,
+      "g": 105,
+      "b": 133
+    },
+    "hsl": {
+      "h": 236,
+      "s": 0.12711864406779663,
+      "l": 0.4627450980392157
+    },
+    "brightness": 107.594
+  },
+  {
+    "id": 12,
+    "file": "photo-012.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.32 (1).jpeg",
+    "src": "/images/photo-012.jpeg",
+    "rgb": {
+      "r": 102,
+      "g": 110,
+      "b": 155
+    },
+    "hsl": {
+      "h": 230.94339622641508,
+      "s": 0.2094861660079051,
+      "l": 0.503921568627451
+    },
+    "brightness": 112.738
+  },
+  {
+    "id": 13,
+    "file": "photo-013.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.32.jpeg",
+    "src": "/images/photo-013.jpeg",
+    "rgb": {
+      "r": 107,
+      "g": 111,
+      "b": 138
+    },
+    "hsl": {
+      "h": 232.25806451612902,
+      "s": 0.12653061224489792,
+      "l": 0.48039215686274506
+    },
+    "brightness": 112.882
+  },
+  {
+    "id": 14,
+    "file": "photo-014.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.33 (1).jpeg",
+    "src": "/images/photo-014.jpeg",
+    "rgb": {
+      "r": 127,
+      "g": 137,
+      "b": 164
+    },
+    "hsl": {
+      "h": 223.78378378378378,
+      "s": 0.16894977168949776,
+      "l": 0.5705882352941176
+    },
+    "brightness": 137.088
+  },
+  {
+    "id": 15,
+    "file": "photo-015.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.33.jpeg",
+    "src": "/images/photo-015.jpeg",
+    "rgb": {
+      "r": 104,
+      "g": 112,
+      "b": 157
+    },
+    "hsl": {
+      "h": 230.94339622641508,
+      "s": 0.21285140562249,
+      "l": 0.5117647058823529
+    },
+    "brightness": 114.738
+  },
+  {
+    "id": 16,
+    "file": "photo-016.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.34 (1).jpeg",
+    "src": "/images/photo-016.jpeg",
+    "rgb": {
+      "r": 95,
+      "g": 93,
+      "b": 166
+    },
+    "hsl": {
+      "h": 241.64383561643837,
+      "s": 0.2908366533864542,
+      "l": 0.5078431372549019
+    },
+    "brightness": 101.92
+  },
+  {
+    "id": 17,
+    "file": "photo-017.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.34 (2).jpeg",
+    "src": "/images/photo-017.jpeg",
+    "rgb": {
+      "r": 158,
+      "g": 164,
+      "b": 215
+    },
+    "hsl": {
+      "h": 233.68421052631575,
+      "s": 0.416058394160584,
+      "l": 0.7313725490196079
+    },
+    "brightness": 168.02
+  },
+  {
+    "id": 18,
+    "file": "photo-018.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.34.jpeg",
+    "src": "/images/photo-018.jpeg",
+    "rgb": {
+      "r": 95,
+      "g": 96,
+      "b": 168
+    },
+    "hsl": {
+      "h": 239.17808219178082,
+      "s": 0.2955465587044534,
+      "l": 0.5156862745098039
+    },
+    "brightness": 103.909
+  },
+  {
+    "id": 19,
+    "file": "photo-019.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.36.jpeg",
+    "src": "/images/photo-019.jpeg",
+    "rgb": {
+      "r": 110,
+      "g": 115,
+      "b": 198
+    },
+    "hsl": {
+      "h": 236.5909090909091,
+      "s": 0.4356435643564356,
+      "l": 0.603921568627451
+    },
+    "brightness": 122.967
+  },
+  {
+    "id": 20,
+    "file": "photo-020.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.38 (1).jpeg",
+    "src": "/images/photo-020.jpeg",
+    "rgb": {
+      "r": 99,
+      "g": 102,
+      "b": 179
+    },
+    "hsl": {
+      "h": 237.75,
+      "s": 0.34482758620689646,
+      "l": 0.5450980392156862
+    },
+    "brightness": 109.881
+  },
+  {
+    "id": 21,
+    "file": "photo-021.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.38 (2).jpeg",
+    "src": "/images/photo-021.jpeg",
+    "rgb": {
+      "r": 100,
+      "g": 101,
+      "b": 178
+    },
+    "hsl": {
+      "h": 239.23076923076923,
+      "s": 0.3362068965517241,
+      "l": 0.5450980392156862
+    },
+    "brightness": 109.479
+  },
+  {
+    "id": 22,
+    "file": "photo-022.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.38.jpeg",
+    "src": "/images/photo-022.jpeg",
+    "rgb": {
+      "r": 109,
+      "g": 113,
+      "b": 191
+    },
+    "hsl": {
+      "h": 237.07317073170734,
+      "s": 0.39047619047619053,
+      "l": 0.5882352941176471
+    },
+    "brightness": 120.696
+  },
+  {
+    "id": 23,
+    "file": "photo-023.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.39.jpeg",
+    "src": "/images/photo-023.jpeg",
+    "rgb": {
+      "r": 114,
+      "g": 118,
+      "b": 206
+    },
+    "hsl": {
+      "h": 237.39130434782606,
+      "s": 0.4842105263157895,
+      "l": 0.6274509803921569
+    },
+    "brightness": 126.836
+  },
+  {
+    "id": 24,
+    "file": "photo-024.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.40.jpeg",
+    "src": "/images/photo-024.jpeg",
+    "rgb": {
+      "r": 109,
+      "g": 113,
+      "b": 191
+    },
+    "hsl": {
+      "h": 237.07317073170734,
+      "s": 0.39047619047619053,
+      "l": 0.5882352941176471
+    },
+    "brightness": 120.696
+  },
+  {
+    "id": 25,
+    "file": "photo-025.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.41 (1).jpeg",
+    "src": "/images/photo-025.jpeg",
+    "rgb": {
+      "r": 100,
+      "g": 101,
+      "b": 178
+    },
+    "hsl": {
+      "h": 239.23076923076923,
+      "s": 0.3362068965517241,
+      "l": 0.5450980392156862
+    },
+    "brightness": 109.479
+  },
+  {
+    "id": 26,
+    "file": "photo-026.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.41 (2).jpeg",
+    "src": "/images/photo-026.jpeg",
+    "rgb": {
+      "r": 174,
+      "g": 122,
+      "b": 143
+    },
+    "hsl": {
+      "h": 335.7692307692307,
+      "s": 0.2429906542056075,
+      "l": 0.5803921568627451
+    },
+    "brightness": 139.942
+  },
+  {
+    "id": 27,
+    "file": "photo-027.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.41.jpeg",
+    "src": "/images/photo-027.jpeg",
+    "rgb": {
+      "r": 99,
+      "g": 102,
+      "b": 179
+    },
+    "hsl": {
+      "h": 237.75,
+      "s": 0.34482758620689646,
+      "l": 0.5450980392156862
+    },
+    "brightness": 109.881
+  },
+  {
+    "id": 28,
+    "file": "photo-028.jpeg",
+    "original": "WhatsApp Image 2026-07-22 at 18.47.43.jpeg",
+    "src": "/images/photo-028.jpeg",
+    "rgb": {
+      "r": 137,
+      "g": 119,
+      "b": 118
+    },
+    "hsl": {
+      "h": 3.1578947368420955,
+      "s": 0.07450980392156858,
+      "l": 0.5
+    },
+    "brightness": 124.268
+  }
+]
